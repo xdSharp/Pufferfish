@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeFtItWk.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            VerticalOptions="Center" 
+            Padding="30,0"
+            Spacing="25">
+
+            <Image
+                Source="image1.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+             />
+
+            <Label
+                Text="Добро пожаловать!"
+                 FontSize="25" 
+                HorizontalOptions="Center"
+                FontAttributes="Bold"/>
+
+            <Border Stroke="Black" StrokeThickness="2">
+            <Entry x:Name="UserEmailEntry" Keyboard="Email" Placeholder="Почта"
+                   />
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+            </Border>
+
+            <Border Stroke="Black" StrokeThickness="2">
+                <Grid ColumnDefinitions="*, 35">
+                    <Entry x:Name="UserPasswordEntry" Placeholder="Пароль" IsPassword="True"/>
+
+                    <ImageButton x:Name="PasswordVisibilityIB" Grid.Column="1"
+                                 Source="visible"
+                                 HeightRequest="35"
+                                 Clicked="ChangePasswordVisibility"/>
+                </Grid>
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="10"/>
+                </Border.StrokeShape>
+            </Border>
+
+
+            <Button
+                Text="ВОЙТИ" 
+                FontSize="20"
+                HorizontalOptions="Fill" 
+                Clicked="GoToMenuPage"
+             />
+
+            <Grid RowDefinitions="*, 35">
+                <Label Text="ИЛИ" TextColor="Gray" HorizontalOptions="Center" Grid.Row="0"/>
+                <Line Stroke="LightGray" X2="800" Grid.Row="0"> </Line>
+            
+            </Grid>
+
+            <HorizontalStackLayout 
+                HorizontalOptions="Center">
+                
+                <Label
+                    Text="Ещё нет аккаунта? " 
+                    TextColor="Gray"
+                    HorizontalTextAlignment="Center" />
+
+
+                <Label
+                    Text=" Зарегистрироваться" 
+                    TextColor="Blue"
+                    HorizontalOptions="Center"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToRegistrationPage"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

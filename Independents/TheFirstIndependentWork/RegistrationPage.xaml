@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TeFtItWk.RegistrationPage"
+             Title=" ">
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center">
+
+        <Image
+            Source="image2.png"
+            HeightRequest="185"
+            Aspect="AspectFit"
+        />
+        
+        
+        <Label 
+            Text="Создание нового аккаунта"
+             FontSize="25"
+            FontAttributes="Bold"
+            HorizontalOptions="Center">
+
+        </Label>
+
+        <Border Stroke="Black" StrokeThickness="2">
+            <Entry x:Name="UserEmailEntry"  Keyboard="Email"
+            Placeholder="Почта"/>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+        </Border>
+
+        <Border Stroke="Black" StrokeThickness="2">
+            <Entry x:Name="UserNameEntry" 
+            Placeholder="Имя пользователя"/>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+        </Border>
+
+        <Border Stroke="Black" StrokeThickness="2">
+            <Grid ColumnDefinitions="*, 35">
+                <Entry x:Name="UserPasswordEntry" Placeholder="Пароль" IsPassword="True"/>
+
+                <ImageButton x:Name="PasswordVisibilityIB" Grid.Column="1"
+                 Source="visible"
+                 HeightRequest="35"
+                 Clicked="ChangePasswordVisibility"/>
+            </Grid>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+        </Border>
+
+        <Border Stroke="Black" StrokeThickness="2">
+            <Entry x:Name="UserRepeatPasswordEntry"
+            Placeholder="Повторите пароль"
+            IsPassword="True"/>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+        </Border>
+
+
+        <Button
+            Text="СОЗДАТЬ АККАУНТ" 
+            FontSize="20"
+            HorizontalOptions="Fill"
+            Clicked="GoToMenuPage"
+        />
+    </VerticalStackLayout>
+</ContentPage>
